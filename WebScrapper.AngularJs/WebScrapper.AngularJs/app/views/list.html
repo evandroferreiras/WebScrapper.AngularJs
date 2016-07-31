@@ -1,0 +1,25 @@
+﻿
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">{{::vm.titleWindow}}</div>
+
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead >
+                <tr style="font-weight: bold">
+                    <td>Title</td>
+                    <td>Description</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.items">
+                    <td>{{item.title}}</td>
+                    <td>{{item.description}}</td>
+                    <td><a ng-href="#edit/{{item.id}}">Edit</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

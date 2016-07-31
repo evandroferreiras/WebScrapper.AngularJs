@@ -1,0 +1,32 @@
+﻿
+
+<div class="panel panel-primary">
+
+    <div class="panel-heading">{{::vm.titleWindow}}</div>
+
+    <form class="panel-body ">
+
+        <div class="col-md-12">
+            <div class="row">
+                <bootstrap-input title="Title" value="vm.item.title" req=true></bootstrap-input>
+
+            </div>
+            <div class="row">
+                <bootstrap-textarea title="Description" value="vm.item.description" req=true></bootstrap-textarea>
+                <div class="form-group">
+                    <label class="control-label">Description</label>
+                    <textarea ng-model="vm.item.description" required class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="row ">
+
+                <a ng-href="#list">Back to List</a>
+
+
+            </div>
+        </div>
+
+    </form>
+
+</div>
+

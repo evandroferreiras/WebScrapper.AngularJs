@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" ng-app="webScrapperManagement">
+<head>
+    <meta charset="utf-8" />
+    <title>Web Scrapper</title>
+
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">WebScrapper</div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <ng-view></ng-view>
+    </div>
+    <!-- General scripts -->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-mocks.js"></script>
+
+    <!-- Angular main-->
+    <script src="app/app.js"></script>
+
+
+
+    <!-- Models -->
+    <script src="app/models/WebScrapperItem.js"></script>
+
+    <!-- Services-->
+
+    <script src="app/services/common.services.js"></script>
+    <script src="app/services/dataAccessService.js"></script>
+    <script src="app/services/WebScrapperItemMock.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/controllers/ListCtrl.js"></script>
+    <script src="app/controllers/CrudCtrl.js"></script>
+    <script src="app/controllers/EditCtrl.js"></script>
+
+
+    <!-- Components -->
+    <script src="app/components/bootstrap.model.js"></script>
+  
+    <script src="app/components/bootstrap.Input.js"></script>
+    <script src="app/components/bootstrap.textarea.js"></script>
+</body>
+</html>
+
+
+

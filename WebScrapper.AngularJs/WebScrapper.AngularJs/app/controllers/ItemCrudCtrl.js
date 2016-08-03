@@ -19,7 +19,6 @@ var app;
                     this.resource.save(this.item);
                 }
                 this.alertSuccess();
-                this.location.path("/list");
             };
             ItemCrudCtrl.prototype.alertSuccess = function () {
                 this.alerts = [];

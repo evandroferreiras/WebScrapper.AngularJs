@@ -10,8 +10,12 @@ var app;
         var ItemEditCtrl = (function (_super) {
             __extends(ItemEditCtrl, _super);
             function ItemEditCtrl($routeParams, dataAccessService, $location) {
+                var _this = this;
                 _super.call(this, $routeParams, dataAccessService, $location);
                 this.titleWindow = "Edit item";
+                this.resource.get({ id: $routeParams.id }, function (data) {
+                    _this.item = data;
+                });
             }
             return ItemEditCtrl;
         }(app.itemCrudCtrl.ItemCrudCtrl));

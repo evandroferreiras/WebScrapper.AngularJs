@@ -7,7 +7,9 @@
              $location : angular.ILocationService) {
             super($routeParams,dataAccessService, $location);
             this.titleWindow = "Edit item";
-            
+             this.resource.get({ id: $routeParams.id }, (data: models.IWebScrapperItem) => {
+                this.item = data;
+            });
         }
     }
 

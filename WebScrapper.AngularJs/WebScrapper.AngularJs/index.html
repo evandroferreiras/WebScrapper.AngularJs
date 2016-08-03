@@ -1,14 +1,19 @@
 ﻿<!DOCTYPE html>
 
 <html lang="en" ng-app="webScrapperManagement">
+
 <head>
     <meta charset="utf-8" />
     <title>Web Scrapper</title>
 
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/bootstrap-theme.css" rel="stylesheet" />
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+
+    <link href="app.css" rel="stylesheet" />
 
 </head>
+
 <body>
 
     <nav class="navbar navbar-default">
@@ -22,15 +27,18 @@
         <ng-view></ng-view>
     </div>
     <!-- General scripts -->
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-resource.js"></script>
-    <script src="Scripts/angular-mocks.js"></script>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
+    <script src="node_modules/angular-mocks/angular-mocks.js"></script>
+
+
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+
 
     <!-- Angular main-->
     <script src="app/app.js"></script>
-
-
 
     <!-- Models -->
     <script src="app/models/WebScrapperItem.js"></script>
@@ -42,18 +50,17 @@
     <script src="app/services/WebScrapperItemMock.js"></script>
 
     <!-- Controllers -->
-    <script src="app/controllers/ListCtrl.js"></script>
-    <script src="app/controllers/CrudCtrl.js"></script>
-    <script src="app/controllers/EditCtrl.js"></script>
+    <script src="app/controllers/ItemListCtrl.js"></script>
+    <script src="app/controllers/ItemCrudCtrl.js"></script>
+    <script src="app/controllers/ItemEditCtrl.js"></script>
+    <script src="app/controllers/ItemNewCtrl.js"></script>
 
 
     <!-- Components -->
     <script src="app/components/bootstrap.model.js"></script>
-  
+
     <script src="app/components/bootstrap.Input.js"></script>
     <script src="app/components/bootstrap.textarea.js"></script>
 </body>
+
 </html>
-
-
-

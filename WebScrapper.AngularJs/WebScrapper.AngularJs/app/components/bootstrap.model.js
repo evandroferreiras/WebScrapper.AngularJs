@@ -17,4 +17,3 @@ var app;
         })(bootstrap = components.bootstrap || (components.bootstrap = {}));
     })(components = app.components || (app.components = {}));
 })(app || (app = {}));
-//# sourceMappingURL=bootstrap.model.js.map

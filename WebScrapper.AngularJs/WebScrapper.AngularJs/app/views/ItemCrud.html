@@ -1,0 +1,30 @@
+﻿<div class="page-header">
+    <h3>{{::vm.titleWindow}}</h3>
+</div>
+<div class="row ">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <form name="formCrud" ng-submit="vm.save()" role="form">
+
+            <div class="col-md-12">
+                <div class="row">
+                    <bootstrap-input title="Title" value="vm.item.title" req=true></bootstrap-input>
+                </div>
+                <div class="row">
+                    <bootstrap-textarea title="Description" value="vm.item.description" req=true></bootstrap-textarea>
+                </div>
+                <div class="row well">
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary" ng-disabled="formCrud.$pristine">Save</button>
+                        <a class="btn btn-default" ng-href="#list" role="button">Back to List</a>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div uib-alert ng-repeat="alert in vm.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="vm.closeAlert($index)">{{alert.msg}}
+
+    </div>
+</div>

@@ -7,7 +7,11 @@ var app;
                 this.$resource = $resource;
             }
             DataAccessService.prototype.getWebScrapperItemResource = function () {
-                return this.$resource("api/webScrapper/:id");
+                var updateAction = {
+                    method: 'PUT',
+                    isArray: false
+                };
+                return this.$resource("api/webScrapper/:id", { id: "@id" }, { update: updateAction });
             };
             DataAccessService.$inject = ["$resource"];
             return DataAccessService;
@@ -17,4 +21,3 @@ var app;
             .service("dataAccessService", DataAccessService);
     })(services = app.services || (app.services = {}));
 })(app || (app = {}));
-//# sourceMappingURL=dataAccessService.js.map

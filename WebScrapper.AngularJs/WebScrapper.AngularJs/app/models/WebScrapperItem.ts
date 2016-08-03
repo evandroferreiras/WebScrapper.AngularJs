@@ -1,6 +1,9 @@
-﻿module app.models{
+﻿module app.models {
+    export interface IItem   {
 
-    export interface IWebScrapperItem {
+    }
+
+    export interface IWebScrapperItem extends IItem {
         id: number;
         title: string;
         description: string;
@@ -10,9 +13,11 @@
         constructor(public id: number,
             public title: string,
             public description: string) {
-            
+
         }
     }
 
-    
+    export interface IWebScrapperItemParams extends ng.route.IRouteParamsService {
+        id: number;
+    }
 }

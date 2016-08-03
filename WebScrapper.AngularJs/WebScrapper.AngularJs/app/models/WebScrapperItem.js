@@ -13,4 +13,3 @@ var app;
         models.WebScrapperItem = WebScrapperItem;
     })(models = app.models || (app.models = {}));
 })(app || (app = {}));
-//# sourceMappingURL=WebScrapperItem.js.map

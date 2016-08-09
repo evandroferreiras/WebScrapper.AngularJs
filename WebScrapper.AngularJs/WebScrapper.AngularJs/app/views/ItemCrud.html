@@ -4,27 +4,55 @@
 <div class="row ">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
         <form name="formCrud" ng-submit="vm.save()" role="form">
+            <fieldset>
+                <div class="col-md-12">
+                    <div class="row">
+                        <bt-input title="Title" ng-model="vm.item.title" required=true></bt-input>
+                    </div>
+                    <div class="row">
+                        <bt-textarea title="Description" ng-model="vm.item.description" required=true></bt-textarea>
+                    </div>
 
-            <div class="col-md-12">
-                <div class="row">
-                    <bootstrap-input title="Title" value="vm.item.title" req=true></bootstrap-input>
-                </div>
-                <div class="row">
-                    <bootstrap-textarea title="Description" value="vm.item.description" req=true></bootstrap-textarea>
-                </div>
-                <div class="row well">
-                    <div class="pull-right">
-                        <button type="submit" class="btn btn-primary" ng-disabled="formCrud.$pristine">Save</button>
-                        <a class="btn btn-default" ng-href="#list" role="button">Back to List</a>
+                    <div class="row">
+
+                        <button type="button" class="btn btn-info" ng-click="vm.newActionModal()">New action</button>
+
+                    </div>
+
+                    <div class="row ng-cli">
+                        <table class=" table table-hover ">
+                            <thead>
+                                <tr style="font-weight: bold ">
+                                    <td>Url</td>
+                                    <td>HTTP Method</td>
+                                    <td>Parameters</td>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="action in vm.item.actions ">
+                                    <td>{{action.url}}</td>
+                                    <td>{{action.httpMethod}}</td>
+                                    <td><a ng-click="vm.openModalParameters(action)">{{vm.ParametersEncode(action.parameters)}}</a></td>
+                                    <td><a ng-click="vm.editActionModal(action)">Edit</a></td>
+                                    <td><a ng-click="vm.deleteAction(action)" style="cursor:pointer ">Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row well ">
+                        <div class="pull-right ">
+                            <button type="submit " class="btn btn-primary " ng-disabled="formCrud.$invalid ">Save</button>
+                            <a class="btn btn-default " ng-href="#list " role="button ">Back to List</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </fieldset>
         </form>
     </div>
 </div>
-<div class="row">
-    <div uib-alert ng-repeat="alert in vm.alerts" ng-class="'alert-' + (alert.type || 'warning')" close="vm.closeAlert($index)">{{alert.msg}}
+<div class="row ">
+    <div uib-alert ng-repeat="alert in vm.alerts " ng-class=" 'alert-' + (alert.type || 'warning') " close="vm.closeAlert($index) ">{{alert.msg}}
 
     </div>
 </div>

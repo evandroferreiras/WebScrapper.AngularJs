@@ -9,8 +9,8 @@ var app;
     (function (itemNewCtrl) {
         var ItemNewCtrl = (function (_super) {
             __extends(ItemNewCtrl, _super);
-            function ItemNewCtrl($routeParams, dataAccessService, $location) {
-                _super.call(this, $routeParams, dataAccessService, $location);
+            function ItemNewCtrl($routeParams, dataAccessService, $location, $uibModal) {
+                _super.call(this, $routeParams, dataAccessService, $location, $uibModal);
                 this.titleWindow = "New item";
             }
             return ItemNewCtrl;

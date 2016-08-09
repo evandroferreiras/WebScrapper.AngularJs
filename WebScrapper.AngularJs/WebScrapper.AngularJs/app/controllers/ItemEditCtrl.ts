@@ -2,12 +2,13 @@
     import WebScrapperItemResource = app.services.IWebScrapperItemResource;
 
     class ItemEditCtrl extends itemCrudCtrl.ItemCrudCtrl {
-        constructor( $routeParams: app.models.IWebScrapperItemParams,
+        constructor( $routeParams: app.models.IItemParams,
              dataAccessService: services.DataAccessService,
-             $location : angular.ILocationService) {
-            super($routeParams,dataAccessService, $location);
+             $location : angular.ILocationService,
+            $uibModal: ng.ui.bootstrap.IModalService) {
+            super($routeParams,dataAccessService, $location, $uibModal);
             this.titleWindow = "Edit item";
-             this.resource.get({ id: $routeParams.id }, (data: models.IWebScrapperItem) => {
+             this.resource.get({ id: $routeParams.id }, (data: models.IItem) => {
                 this.item = data;
             });
         }

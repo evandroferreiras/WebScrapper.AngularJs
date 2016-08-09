@@ -2,14 +2,15 @@ var app;
 (function (app) {
     var models;
     (function (models) {
-        var WebScrapperItem = (function () {
-            function WebScrapperItem(id, title, description) {
+        var Item = (function () {
+            function Item(id, title, description, actions) {
                 this.id = id;
                 this.title = title;
                 this.description = description;
+                this.actions = actions;
             }
-            return WebScrapperItem;
+            return Item;
         }());
-        models.WebScrapperItem = WebScrapperItem;
+        models.Item = Item;
     })(models = app.models || (app.models = {}));
 })(app || (app = {}));

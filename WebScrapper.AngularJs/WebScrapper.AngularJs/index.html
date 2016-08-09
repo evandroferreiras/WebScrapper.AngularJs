@@ -5,11 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Web Scrapper</title>
-
-
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
-
     <link href="app.css" rel="stylesheet" />
 
 </head>
@@ -41,7 +37,10 @@
     <script src="app/app.js"></script>
 
     <!-- Models -->
-    <script src="app/models/WebScrapperItem.js"></script>
+    <script src="app/models/Action.js"></script>
+    <script src="app/models/Parameter.js"></script>
+    <script src="app/models/Item.js"></script>
+    <script src="app/models/Alert.js"></script>
 
     <!-- Services-->
 
@@ -54,13 +53,14 @@
     <script src="app/controllers/ItemCrudCtrl.js"></script>
     <script src="app/controllers/ItemEditCtrl.js"></script>
     <script src="app/controllers/ItemNewCtrl.js"></script>
+    <script src="app/controllers/ModalParametersEdit.js"></script>
+    <script src="app/controllers/ModalCrudAction.js"></script>
+
 
 
     <!-- Components -->
-    <script src="app/components/bootstrap.model.js"></script>
+    <script src="node_modules/angular.bootstrap.components/src/bootstrap.components.js"></script>
 
-    <script src="app/components/bootstrap.Input.js"></script>
-    <script src="app/components/bootstrap.textarea.js"></script>
 </body>
 
 </html>

@@ -4,7 +4,8 @@ module app {
         "ngRoute",
         "common.services",
         "webScrapperItemMock",
-        "ui.bootstrap"]);
+        "ui.bootstrap",
+        "bootstrap.components"]);
 
     main.config(routeConfig);
     routeConfig.$inject = ["$routeProvider"];

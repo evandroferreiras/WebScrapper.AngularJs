@@ -2,10 +2,11 @@ module app.itemNewCtrl {
 
     class ItemNewCtrl extends itemCrudCtrl.ItemCrudCtrl {
 
-        constructor( $routeParams: app.models.IWebScrapperItemParams,
+        constructor( $routeParams: app.models.IItemParams,
              dataAccessService: services.DataAccessService,
-             $location : angular.ILocationService) {
-            super($routeParams,dataAccessService, $location);
+             $location : angular.ILocationService,
+             $uibModal: ng.ui.bootstrap.IModalService) {
+            super($routeParams,dataAccessService, $location, $uibModal);
             this.titleWindow = "New item";
             
         }

@@ -1,7 +1,7 @@
 ﻿module app.services {
 
     export interface IWebScrapperItemResourceClass extends ng.resource.IResourceClass<IWebScrapperItemResource> {
-        update(IWebScrapperItem): app.models.IWebScrapperItem;
+        update(IWebScrapperItem): app.models.IItem;
     }
 
     interface IDataAccessService {
@@ -9,7 +9,7 @@
     }
 
 
-    export interface IWebScrapperItemResource extends ng.resource.IResource<app.models.IWebScrapperItem> {
+    export interface IWebScrapperItemResource extends ng.resource.IResource<app.models.IItem> {
 
     }
 

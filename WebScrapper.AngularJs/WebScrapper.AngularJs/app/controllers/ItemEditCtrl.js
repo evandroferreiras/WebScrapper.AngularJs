@@ -9,9 +9,9 @@ var app;
     (function (itemEditCtrl) {
         var ItemEditCtrl = (function (_super) {
             __extends(ItemEditCtrl, _super);
-            function ItemEditCtrl($routeParams, dataAccessService, $location) {
+            function ItemEditCtrl($routeParams, dataAccessService, $location, $uibModal) {
                 var _this = this;
-                _super.call(this, $routeParams, dataAccessService, $location);
+                _super.call(this, $routeParams, dataAccessService, $location, $uibModal);
                 this.titleWindow = "Edit item";
                 this.resource.get({ id: $routeParams.id }, function (data) {
                     _this.item = data;

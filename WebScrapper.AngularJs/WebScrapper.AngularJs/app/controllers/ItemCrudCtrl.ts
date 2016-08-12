@@ -4,7 +4,7 @@
         titleWindow: string;
         item: app.models.IItem;
         alerts: app.models.IAlert[];
-        resource: app.services.IWebScrapperItemResourceClass;
+        resource: app.services.IItemResourceClass;
         alertSuccess();
         alertError();
         closeAlert(index);
@@ -20,15 +20,15 @@
         titleWindow: string;
         item: app.models.IItem;
         alerts: app.models.IAlert[];
-        resource: app.services.IWebScrapperItemResourceClass;
+        resource: app.services.IItemResourceClass;
 
         location: angular.ILocationService
-        static $inject = ["$routeParams", "dataAccessService", "$location", "$uibModal"];
+        static $inject = ["$routeParams", "itemService", "$location", "$uibModal"];
         constructor(private $routeParams: app.models.IItemParams,
-            private dataAccessService: services.DataAccessService,
+            private itemService: services.ItemService,
             private $location: angular.ILocationService,
             private $uibModal: ng.ui.bootstrap.IModalService) {
-            this.resource = dataAccessService.getWebScrapperItemResource();
+            this.resource = itemService.getResource();
             this.location = $location;
         }
 

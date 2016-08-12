@@ -5,7 +5,9 @@ module app {
         "common.services",
         "webScrapperItemMock",
         "ui.bootstrap",
-        "bootstrap.components"]);
+        "bootstrap.components",
+        "ngSanitize", 
+        "ui.select"]);
 
     main.config(routeConfig);
     routeConfig.$inject = ["$routeProvider"];

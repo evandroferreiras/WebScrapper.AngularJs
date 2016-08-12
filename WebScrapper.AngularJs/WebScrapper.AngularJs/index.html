@@ -5,9 +5,39 @@
 <head>
     <meta charset="utf-8" />
     <title>Web Scrapper</title>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="app.css" rel="stylesheet" />
-
+    <link rel="stylesheet" href="node_modules/ui-select/dist/select.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
+    <link rel="stylesheet" href="node_modules/selectize/dist/css/selectize.default.css">
+    <style>
+        body {
+            padding: 15px;
+        }
+        
+        .select2 > .select2-choice.ui-select-match {
+            /* Because of the inclusion of Bootstrap */
+            height: 29px;
+        }
+        
+        .selectize-control > .selectize-dropdown {
+            top: 36px;
+        }
+        /* Some additional styling to demonstrate that append-to-body helps achieve the proper z-index layering. */
+        
+        .select-box {
+            background: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .alert-info.positioned {
+            margin-top: 1em;
+            position: relative;
+            z-index: 10000;
+            /* The select2 dropdown has a z-index of 9999 */
+        }
+    </style>
 </head>
 
 <body>
@@ -25,41 +55,20 @@
     <!-- General scripts -->
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
-
     <script src="node_modules/angular-resource/angular-resource.js"></script>
     <script src="node_modules/angular-mocks/angular-mocks.js"></script>
-
-
+    <script src="node_modules/angular-sanitize/angular-sanitize.js"></script>
     <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
-
+    <script src="node_modules/ui-select/dist/select.js"></script>
+    <script src="node_modules/angular.bootstrap.components/src/bootstrap.components.js"></script>
 
     <!-- Angular main-->
-    <script src="app/app.js"></script>
-
-    <!-- Models -->
-    <script src="app/models/Action.js"></script>
-    <script src="app/models/Parameter.js"></script>
-    <script src="app/models/Item.js"></script>
-    <script src="app/models/Alert.js"></script>
-
-    <!-- Services-->
-
-    <script src="app/services/common.services.js"></script>
-    <script src="app/services/dataAccessService.js"></script>
-    <script src="app/services/WebScrapperItemMock.js"></script>
-
-    <!-- Controllers -->
-    <script src="app/controllers/ItemListCtrl.js"></script>
-    <script src="app/controllers/ItemCrudCtrl.js"></script>
-    <script src="app/controllers/ItemEditCtrl.js"></script>
-    <script src="app/controllers/ItemNewCtrl.js"></script>
-    <script src="app/controllers/ModalParametersEdit.js"></script>
-    <script src="app/controllers/ModalCrudAction.js"></script>
+    <script src="app/resultJs.js"></script>
 
 
 
-    <!-- Components -->
-    <script src="node_modules/angular.bootstrap.components/src/bootstrap.components.js"></script>
+
+
 
 </body>
 

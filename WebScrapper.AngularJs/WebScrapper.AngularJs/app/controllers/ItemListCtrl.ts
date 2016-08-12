@@ -8,13 +8,13 @@
         titleWindow: string;
         items: app.models.IItem[];
 
-        static $inject = ["dataAccessService"];
-        constructor(private dataAccessService : app.services.DataAccessService) {
-            this.titleWindow = "Listing WebScrappers";
+        static $inject = ["itemService"];
+        constructor(private itemService : app.services.ItemService) {
+            this.titleWindow = "Listing items";
             
             this.items = [];
 
-            var resource = dataAccessService.getWebScrapperItemResource();
+            var resource = itemService.getResource();
 
             resource.query((data: app.models.IItem[]) => {
                 this.items = data;

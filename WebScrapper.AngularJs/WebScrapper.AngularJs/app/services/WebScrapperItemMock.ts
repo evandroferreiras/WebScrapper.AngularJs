@@ -10,31 +10,26 @@ module app.services {
 
         var items: app.models.IItem[] = [];
         var item: app.models.IItem;
-
         var actions = [];
         var parameters = [];
-
         parameters = [];
         parameters.push(new app.models.Parameter("query3", "teste3"));
         var action = new app.models.Action(1, "www.site3.com", "POST", parameters);
         actions.push(action);
         item = new app.models.Item(1, "Google", "Robot to query on google web site", actions);
         items.push(item);
-
         parameters = [];
         parameters.push(new app.models.Parameter("query2", "teste2"));
         var action = new app.models.Action(1, "www.site2.com", "POST", parameters);
         actions.push(action);
         item = new app.models.Item(2, "Americanas", "Robot to query products", actions);
         items.push(item);
-
         parameters = [];
         parameters.push(new app.models.Parameter("query2", "teste2"));
         var action = new app.models.Action(1, "www.site2.com", "POST", parameters);
         actions.push(action);
         item = new app.models.Item(3, "Submarino", "Robot to query products", actions);
         items.push(item);
-
         parameters = [];
         parameters.push(new app.models.Parameter("query2", "teste2"));
         var action = new app.models.Action(1, "www.site6.com", "POST", parameters);
@@ -42,8 +37,14 @@ module app.services {
         item = new app.models.Item(4, "Facebook", "Robot that automatically likes all the photos", actions);
         items.push(item);
 
-        $httpBackend.whenPUT(/api\/webScrapper\/[0-9]*/).respond(function (method, url, data: string, headers) {
-            
+        var httpMethods : app.models.IHttpMethods[] = [];
+        httpMethods.push(new app.models.HttpMethods("POST"));
+        httpMethods.push(new app.models.HttpMethods("PUT"));
+        httpMethods.push(new app.models.HttpMethods("GET"));
+        httpMethods.push(new app.models.HttpMethods("DELETE"));
+
+
+        $httpBackend.whenPUT(/api\/items\/[0-9]*/).respond(function (method, url, data: string, headers) {            
             var item = angular.extend(new app.models.Item(0,"","", null),angular.fromJson(data) );   
                      
             console.log(item);
@@ -67,7 +68,7 @@ module app.services {
         });
 
 
-        $httpBackend.whenPOST(/api\/webScrapper/).respond(function (method, url, data: string, headers) {
+        $httpBackend.whenPOST(/api\/items/).respond(function (method, url, data: string, headers) {
             var jsonObj = angular.fromJson(data);
             items.push(<app.models.IItem>jsonObj);
             return [200, {}, {}];
@@ -80,10 +81,7 @@ module app.services {
             return [200, {}, {}];
         });
 
-
-
-
-        $httpBackend.whenGET(/api\/webScrapper\/[0-9]*/).respond(function (method, url, data) {
+        $httpBackend.whenGET(/api\/items\/[0-9]*/).respond(function (method, url, data) {
             
             var product = { "id": 0 };
             var parameters = url.split('/');
@@ -102,9 +100,14 @@ module app.services {
             return [200, product, {}];
         });
 
-        $httpBackend.whenGET(/api\/webScrapper/).respond(function (method, url, data) {
+        $httpBackend.whenGET(/api\/items/).respond(function (method, url, data) {
 
             return [200, items, {}];
+        });
+
+        $httpBackend.whenGET(/api\/httpMethods/).respond(function (method, url, data) {
+
+            return [200, httpMethods, {}];
         });
 
         // Catch all for testing purposes

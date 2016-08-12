@@ -1,0 +1,15 @@
+Web scrappers:
+✔ Develop model for TypeInformation @done
+☐ Develop resource for TypeInformation
+☐ Develop mock for TypeInformation
+-------------------------------
+☐ Develop model for ResultAction
+☐ Develop resource for ResultAction
+☐ Develop mock for ResultAction
+-------------------------------
+☐ Develop model ExtractInformation
+☐ Develop model InformationResult
+☐ Develop model ResponseAction 
+☐ Develop mock new values
+☐ Develop modal for Response Action
+

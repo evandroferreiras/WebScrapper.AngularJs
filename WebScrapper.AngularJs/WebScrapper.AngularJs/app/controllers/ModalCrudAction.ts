@@ -10,13 +10,25 @@ module app.modalCrudAction {
 
     export class ModalCrudAction implements IModalCrudAction{
         public newAction : app.models.IAction;
-        static $inject = ["$uibModalInstance", "action", "item"];
+        public httpMethods : app.models.IHttpMethods[];
+        static $inject = ["$uibModalInstance", "action", "item", "httpMethodsService"];
         constructor(private $uibModalInstance: angular.ui.bootstrap.IModalServiceInstance,
             public action: app.models.IAction,
-            public item : app.models.IItem) {
+            public item : app.models.IItem,
+            public httpMethodsService : app.services.HttpMethodsService) {
 
             this.newAction = angular.copy(action,this.newAction)
             
+            var resource = httpMethodsService.getResource();
+
+            this.httpMethods = [];
+
+            resource.query((data: app.models.IHttpMethods[]) => {
+                this.httpMethods = data;
+            });
+
+
+
         }
 
         save() : void{
@@ -48,16 +60,24 @@ module app.modalCrudAction {
                                 <form name="formAction" ng-submit="c.save()" role="form">
                                     <div class="modal-body">
                                         <div class="row">
-                                                <div class="col-md-5">
-                                                    <bt-input title="Url" ng-model="c.newAction.url" required=true has-placeholder=true ></bt-input>                                            
+                                                <div class="col-md-5">                                                    
+                                                    <div ng-class="{  'has-error' : formAction.url.$invalid, 'form-group' : true }">
+
+                                                        <input name="url" type="url" class="form-control" placeholder="Url" ng-model="c.newAction.url" required=true />
+                                                    </div>                                                                               
                                                 </div>
                                                 <div class="col-md-5">
-                                                    <bt-input title="HTTP Method" ng-model="c.newAction.httpMethod" ng-required=true has-placeholder=true ></bt-input>                                                                  
+                                                    <ui-select ng-model="c.newAction.httpMethod" ng-class="{'has-error': !c.newAction.httpMethod }" ng-required="true" theme="bootstrap">
+                                                        <ui-select-match placeholder="Select a Http Method">{{$select.selected.name}}</ui-select-match>
+                                                        <ui-select-choices repeat="item.name as item in c.httpMethods | filter: $select.search">
+                                                            <div ng-bind-html="item.name | highlight: $select.search"></div>
+                                                        </ui-select-choices>
+                                                    </ui-select>                                                                                                                      
                                                 </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button class="btn btn-primary" type="submit" ng-disabled="formNewParameter.$invalid">Save</button>
+                                        <button class="btn btn-primary" type="submit" ng-disabled="formAction.$invalid">Save</button>
                                         <button class="btn btn-warning" type="button" ng-click="c.cancel()">Cancel</button>
                                     </div>
                                 </form>`,

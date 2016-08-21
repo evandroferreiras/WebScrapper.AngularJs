@@ -1,15 +1,17 @@
 Web scrappers:
 ✔ Develop model for TypeInformation @done
-☐ Develop resource for TypeInformation
-☐ Develop mock for TypeInformation
+✔ Develop resource for TypeInformationService @done
+✔ Develop mock for TypeInformation @done
 -------------------------------
-☐ Develop model for ResultAction
-☐ Develop resource for ResultAction
-☐ Develop mock for ResultAction
+✔ Develop model for ResultAction @done
+✔ Develop resource for ResultActionService @done
+✔ Develop mock for ResultAction @done
 -------------------------------
-☐ Develop model ExtractInformation
-☐ Develop model InformationResult
-☐ Develop model ResponseAction 
-☐ Develop mock new values
+✔ Develop model ExtractInformation @done
+✔ Develop model InformationResult @done
+✔ Develop model ResponseAction @done
 ☐ Develop modal for Response Action
+☐ Develop mock ResponseAction
+☐ Alter grid Parameters to use Ui-grid
+☐ Alter grid Listing to use ui-grid
 

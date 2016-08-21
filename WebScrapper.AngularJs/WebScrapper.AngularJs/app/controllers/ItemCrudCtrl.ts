@@ -35,7 +35,7 @@
 
         save(): void {
             var castItem = <app.models.Item>this.item;
-            console.log(castItem);
+            
             if (castItem.id > 0) {
                 this.resource.update(this.item);
             } else {
@@ -82,13 +82,19 @@
         };
 
         newActionModal(): void {
-            var action = new app.models.Action(0, "", "", []);
+            var responseAction = new app.models.ResponseAction([],[]);
+            var action = new app.models.Action(0, "", "", [],responseAction);
             new app.modalCrudAction.ModalCrudActionParent(this.$uibModal).openModal(action, this.item);
         }
 
         editActionModal(action: app.models.IAction): void {
             new app.modalCrudAction.ModalCrudActionParent(this.$uibModal).openModal(action, this.item);
         }
-    }
 
+        openModalResponseAction(action: app.models.IAction) : void {        
+                
+            new app.modalResponseAction.ModalResponseActionParent(this.$uibModal).openModal(action.responseAction, action)
+        }
+    }
+    
 } 

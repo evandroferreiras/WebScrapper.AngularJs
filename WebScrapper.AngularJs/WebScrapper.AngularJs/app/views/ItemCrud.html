@@ -26,6 +26,7 @@
                                     <td>Url</td>
                                     <td>HTTP Method</td>
                                     <td>Parameters</td>
+                                    <td></td>
 
                                 </tr>
                             </thead>
@@ -34,6 +35,7 @@
                                     <td>{{action.url}}</td>
                                     <td>{{action.httpMethod}}</td>
                                     <td><a ng-click="vm.openModalParameters(action)">{{vm.ParametersEncode(action.parameters)}}</a></td>
+                                    <td><a ng-click="vm.openModalResponseAction(action)">Reponse Action</a></td>
                                     <td><a ng-click="vm.editActionModal(action)">Edit</a></td>
                                     <td><a ng-click="vm.deleteAction(action)" style="cursor:pointer ">Delete</a></td>
                                 </tr>

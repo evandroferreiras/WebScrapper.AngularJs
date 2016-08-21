@@ -5,6 +5,7 @@
         title: string;
         description: string;
         actions: IAction[];
+
     }
 
     export class Item implements IItem {
@@ -12,7 +13,7 @@
             public title: string,
             public description: string,
             public actions : IAction[]) {
-
+            
         }
     }
 

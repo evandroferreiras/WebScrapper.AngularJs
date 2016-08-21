@@ -7,7 +7,9 @@ module app {
         "ui.bootstrap",
         "bootstrap.components",
         "ngSanitize", 
-        "ui.select"]);
+        "ui.select",
+        "ui.grid",
+        "ui.grid.edit"]);
 
     main.config(routeConfig);
     routeConfig.$inject = ["$routeProvider"];
@@ -16,12 +18,13 @@ module app {
             .when("/list",
             {
                 templateUrl: "app/views/list.html",
-                controller: "ItemListCtrl as vm"
+                controller: "ItemListCtrl as vm",
             })
             .when("/new",
             {
                 templateUrl: "app/views/itemCrud.html",
-                controller: "ItemNewCtrl as vm"
+                controller: "ItemNewCtrl as vm",
+                
             })
             .when("/edit/:id",
             {

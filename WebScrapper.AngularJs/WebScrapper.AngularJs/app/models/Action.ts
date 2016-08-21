@@ -4,7 +4,7 @@ module app.models{
         url: string;
         httpMethod: string;
         parameters : app.models.IParameter[]
-
+        responseAction : app.models.IResponseAction; 
     }
 
     export class Action implements IAction{
@@ -12,7 +12,8 @@ module app.models{
         constructor( public id: number,
                      public url: string,
                      public httpMethod: string,
-                     public parameters : app.models.IParameter[]) 
+                     public parameters : app.models.IParameter[],
+                     public responseAction : app.models.IResponseAction) 
         {       
         }
     }

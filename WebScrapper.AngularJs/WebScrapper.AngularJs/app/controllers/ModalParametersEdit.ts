@@ -25,7 +25,7 @@ module app.modalParametersEdit {
             
         }
         add(): void {
-            console.log(this.newParameter)
+            
             this.parameters.push(this.newParameter);
             this.newParameter = new app.models.Parameter("", "");
         }

@@ -5,12 +5,8 @@ module app.models{
     }
 
     export class Alert implements IAlert {
-        type: string;
-        msg: string;
-
-        constructor(type: string, msg: string) {
-            this.type = type;
-            this.msg = msg;
+        constructor(public type: string, 
+                    public msg: string) {
         }
     }
 }

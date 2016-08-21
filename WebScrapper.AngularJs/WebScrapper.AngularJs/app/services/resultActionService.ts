@@ -1,5 +1,5 @@
-module app.services {
-    export interface IResultActionResource extends ng.resource.IResource<app.models.IHttpMethods> {
+module app.services{
+    export interface IResultActionResource extends ng.resource.IResource<app.models.IResultAction> {
 
     }
 
@@ -7,11 +7,11 @@ module app.services {
 
     }
 
-    interface IHttpMethodsService {
-        getResource() : IResultActionResourceClass
+    interface IResultActionService{
+        getResource() : IResultActionResourceClass;        
     }
 
-    export class HttpMethodsService implements IHttpMethodsService {
+    export class ResultActionService implements IResultActionService {
         static $inject = ["$resource"];
         config : app.config.ConstantsValues;
         
@@ -20,10 +20,11 @@ module app.services {
         }
 
         getResource() : IResultActionResourceClass{
-            return this.$resource(this.config.apiUrl + "api/httpmethods/");
-        }
-        
+            return this.$resource(this.config.apiUrl + "api/resultactions/")
+        }        
     }
+
     angular.module("common.services")
-        .service("httpMethodsService", HttpMethodsService);
+        .service("resultActionService", ResultActionService);
+
 }

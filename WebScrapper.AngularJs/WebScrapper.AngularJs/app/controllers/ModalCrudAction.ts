@@ -26,9 +26,6 @@ module app.modalCrudAction {
             resource.query((data: app.models.IHttpMethods[]) => {
                 this.httpMethods = data;
             });
-
-
-
         }
 
         save() : void{
@@ -48,6 +45,7 @@ module app.modalCrudAction {
     }
 
     export class ModalCrudActionParent {
+        
         static $inject = ["$uibModal"];
         constructor(private $uibModal: ng.ui.bootstrap.IModalService) {}  
         

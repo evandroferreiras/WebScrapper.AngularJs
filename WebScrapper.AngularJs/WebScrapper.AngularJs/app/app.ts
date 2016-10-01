@@ -3,7 +3,7 @@ module app {
     var main = angular.module("webScrapperManagement", [
         "ngRoute",
         "common.services",
-        "webScrapperItemMock",
+        // "webScrapperItemMock",
         "ui.bootstrap",
         "bootstrap.components",
         "ngSanitize", 

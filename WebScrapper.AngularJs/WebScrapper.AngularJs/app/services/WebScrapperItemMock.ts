@@ -150,8 +150,8 @@ module app.services {
     function getTypeInformations() : models.ITypeInformation[] {
         
         var typeInformations : models.ITypeInformation[] = [];
-        typeInformations.push(new models.TypeInformation(1,"Table"));
-        typeInformations.push(new models.TypeInformation(2,"Element"));
+        typeInformations.push(new models.TypeInformation("1","Table"));
+        typeInformations.push(new models.TypeInformation("2","Element"));
         return typeInformations;
     }
 

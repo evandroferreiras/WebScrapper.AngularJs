@@ -10,8 +10,8 @@ Web scrappers:
 ✔ Develop model ExtractInformation @done
 ✔ Develop model InformationResult @done
 ✔ Develop model ResponseAction @done
-☐ Develop modal for Response Action
-☐ Develop mock ResponseAction
+✔ Develop modal for Response Action @done
+✔ Develop mock ResponseAction @done
 ☐ Alter grid Parameters to use Ui-grid
-☐ Alter grid Listing to use ui-grid
+✔ Alter grid Listing to use ui-grid @done
 

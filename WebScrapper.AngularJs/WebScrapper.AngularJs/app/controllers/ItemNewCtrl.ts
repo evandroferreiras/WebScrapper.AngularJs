@@ -8,7 +8,7 @@ module app.itemNewCtrl {
              $uibModal: ng.ui.bootstrap.IModalService) {
             super($routeParams,itemService, $location, $uibModal);
             this.titleWindow = "New item";
-            
+            this.item = new app.models.Item(0,"","",[]);
         }
 
     }

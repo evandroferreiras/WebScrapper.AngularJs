@@ -13,7 +13,6 @@
             public title: string,
             public description: string,
             public actions : IAction[]) {
-            
         }
     }
 

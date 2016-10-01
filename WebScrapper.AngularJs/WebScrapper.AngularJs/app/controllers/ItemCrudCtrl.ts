@@ -3,7 +3,7 @@
     export interface IItemCrudCtrl {
         titleWindow: string;
         item: app.models.IItem;
-        alerts: app.models.IAlert[];
+        alerts: app.components.IAlert[];
         resource: app.services.IItemResourceClass;
         alertSuccess();
         alertError();
@@ -19,7 +19,7 @@
 
         titleWindow: string;
         item: app.models.IItem;
-        alerts: app.models.IAlert[];
+        alerts: app.components.IAlert[];
         resource: app.services.IItemResourceClass;
 
         location: angular.ILocationService
@@ -58,12 +58,12 @@
         }
         alertSuccess() {
             this.alerts = [];
-            this.alerts.push(new app.models.Alert("success", "Saved with sucess"));
+            this.alerts.push(new app.components.Alert("success", "Saved with sucess"));
         }
 
         alertError() {
             this.alerts = [];
-            this.alerts.push(new app.models.Alert("danger", "Error"));
+            this.alerts.push(new app.components.Alert("danger", "Error"));
         }
 
         closeAlert(index) {

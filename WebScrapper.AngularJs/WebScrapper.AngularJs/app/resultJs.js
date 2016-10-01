@@ -21,7 +21,7 @@ var app;
                     var constantsValues = new ConstantsValues();
                     constantsValues.appName = "My App";
                     constantsValues.appVersion = "2.0";
-                    constantsValues.apiUrl = 'https://your-api.com/';
+                    constantsValues.apiUrl = 'http://localhost:4256/';
                     constantsValues.baseUrl = '/';
                     constantsValues.enableDebug = true;
                     return constantsValues;
@@ -39,7 +39,7 @@ var app;
     var main = angular.module("webScrapperManagement", [
         "ngRoute",
         "common.services",
-        "webScrapperItemMock",
+        // "webScrapperItemMock",
         "ui.bootstrap",
         "bootstrap.components",
         "ngSanitize",
@@ -64,6 +64,20 @@ var app;
         })
             .otherwise("/list");
     }
+})(app || (app = {}));
+var app;
+(function (app) {
+    var components;
+    (function (components) {
+        var Alert = (function () {
+            function Alert(type, msg) {
+                this.type = type;
+                this.msg = msg;
+            }
+            return Alert;
+        }());
+        components.Alert = Alert;
+    })(components = app.components || (app.components = {}));
 })(app || (app = {}));
 var app;
 (function (app) {
@@ -100,11 +114,11 @@ var app;
             };
             ItemCrudCtrl.prototype.alertSuccess = function () {
                 this.alerts = [];
-                this.alerts.push(new app.models.Alert("success", "Saved with sucess"));
+                this.alerts.push(new app.components.Alert("success", "Saved with sucess"));
             };
             ItemCrudCtrl.prototype.alertError = function () {
                 this.alerts = [];
-                this.alerts.push(new app.models.Alert("danger", "Error"));
+                this.alerts.push(new app.components.Alert("danger", "Error"));
             };
             ItemCrudCtrl.prototype.closeAlert = function (index) {
                 this.alerts.splice(index, 1);
@@ -197,6 +211,7 @@ var app;
             function ItemNewCtrl($routeParams, itemService, $location, $uibModal) {
                 _super.call(this, $routeParams, itemService, $location, $uibModal);
                 this.titleWindow = "New item";
+                this.item = new app.models.Item(0, "", "", []);
             }
             return ItemNewCtrl;
         }(app.itemCrudCtrl.ItemCrudCtrl));
@@ -433,20 +448,6 @@ var app;
 (function (app) {
     var models;
     (function (models) {
-        var Alert = (function () {
-            function Alert(type, msg) {
-                this.type = type;
-                this.msg = msg;
-            }
-            return Alert;
-        }());
-        models.Alert = Alert;
-    })(models = app.models || (app.models = {}));
-})(app || (app = {}));
-var app;
-(function (app) {
-    var models;
-    (function (models) {
         var ExtractInformation = (function () {
             function ExtractInformation(id, typeInformation, cssSelector) {
                 this.id = id;
@@ -677,8 +678,8 @@ var app;
         }
         function getTypeInformations() {
             var typeInformations = [];
-            typeInformations.push(new app.models.TypeInformation(1, "Table"));
-            typeInformations.push(new app.models.TypeInformation(2, "Element"));
+            typeInformations.push(new app.models.TypeInformation("1", "Table"));
+            typeInformations.push(new app.models.TypeInformation("2", "Element"));
             return typeInformations;
         }
         function getResultActions() {

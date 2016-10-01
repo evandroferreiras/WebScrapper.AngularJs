@@ -15,7 +15,7 @@ module app.config {
 
             constantsValues.appName = "My App";
             constantsValues.appVersion = "2.0";
-            constantsValues.apiUrl = 'https://your-api.com/';
+            constantsValues.apiUrl = 'http://localhost:4256/';
             constantsValues.baseUrl = '/';
             constantsValues.enableDebug = true;
 

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54ACE2A6-A933-4E88-AE23-3CEEE5CB048C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebScrapper.Core</RootNamespace>
+    <AssemblyName>WebScrapper.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bootstrapper, Version=2.0.3.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bootstrapper.2.0.3.13\lib\Net40\Bootstrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bootstrapper.Ninject, Version=2.0.3.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bootstrapper.Ninject.2.0.3.13\lib\Net40\Bootstrapper.Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CommonServiceLocator.NinjectAdapter.Unofficial, Version=3.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.NinjectAdapter.Unofficial.3.2.2.0\lib\Net40\CommonServiceLocator.NinjectAdapter.Unofficial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\Application\AutoMapperProfile.cs" />
+    <Compile Include="Helpers\Application\IDTOEntity.cs" />
+    <Compile Include="Helpers\Application\ServiceBase.cs" />
+    <Compile Include="Helpers\Domain\IDomainEntity.cs" />
+    <Compile Include="Helpers\Registers\BootstrapperStart.cs" />
+    <Compile Include="Helpers\Repository\RepositoryModule.cs" />
+    <Compile Include="Helpers\Repository\StubRepository.cs" />
+    <Compile Include="Layer\Application\Items\ItemService.cs" />
+    <Compile Include="Layer\Application\Actions\ActionDto.cs" />
+    <Compile Include="Layer\Application\ResponseActions\ExtractInformationDto.cs" />
+    <Compile Include="Layer\Application\ResponseActions\InformationResultDto.cs" />
+    <Compile Include="Layer\Application\Items\ItemDto.cs" />
+    <Compile Include="Layer\Application\Actions\ParameterDto.cs" />
+    <Compile Include="Layer\Application\ResponseActions\ResponseActionDto.cs" />
+    <Compile Include="Layer\Application\ResponseActions\ResultActionDto.cs" />
+    <Compile Include="Layer\Application\ResponseActions\ResultActionService.cs" />
+    <Compile Include="Layer\Application\ResponseActions\TypeInformationDto.cs" />
+    <Compile Include="Layer\Application\ResponseActions\TypeInformationService.cs" />
+    <Compile Include="Layer\Domain\Actions\Action.cs" />
+    <Compile Include="Layer\Domain\Actions\Parameter.cs" />
+    <Compile Include="Layer\Domain\Items\Item.cs" />
+    <Compile Include="Layer\Domain\ResponseActions\ExtractInformation.cs" />
+    <Compile Include="Layer\Domain\ResponseActions\InformationResult.cs" />
+    <Compile Include="Layer\Domain\ResponseActions\ResponseAction.cs" />
+    <Compile Include="Layer\Domain\ResponseActions\ResultAction.cs" />
+    <Compile Include="Layer\Domain\ResponseActions\TypeInformation.cs" />
+    <Compile Include="Layer\Infra\StubItemRepository.cs" />
+    <Compile Include="Layer\Infra\StubResultActionRepository.cs" />
+    <Compile Include="Layer\Infra\StubTypeInformationRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\Repository\IRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
